@@ -153,7 +153,12 @@ ALTER TABLE Ticket ADD COLUMN departure_time TIMESTAMPTZ;
 ALTER TABLE Ticket ADD COLUMN arrival_time   TIMESTAMPTZ;
 
 
--- Order (see in the file trigger) 
+ 
+-- Order of execution
+
+-- 1. DDL (until here)
+-- 2. DML  
+-- 3. Trigger  trg_sync_ticket_flight_times   
 -- 4. Constraint  
 
 -- ALTER TABLE Ticket DROP CONSTRAINT excl_ticket_passenger_overlap;
