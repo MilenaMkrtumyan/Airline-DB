@@ -6,7 +6,8 @@
 -- 2. DML  
 -- ... Airport, Aircraft, Crew, Passenger, Reservation, Flight, Ticket, Baggage, Flight_Crew ...
  
--- 3. Trigger (for future writes only)
+-- 3. Trigger   trg_sync_ticket_flight_times  (for future writes only) 
+
 CREATE OR REPLACE FUNCTION sync_ticket_flight_times() RETURNS TRIGGER AS $$
 BEGIN
     SELECT f.departure_time, f.arrival_time
